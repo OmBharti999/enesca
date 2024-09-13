@@ -1,27 +1,31 @@
+import Link from "next/link";
+import { CheckCircle, Leaf, Package } from "lucide-react";
+
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 // import ProductReel from '@/components/ProductReel'
 import { Button, buttonVariants } from "@/components/ui/button";
-import { ArrowDownToLine, CheckCircle, Leaf } from "lucide-react";
-import Link from "next/link";
 
 const perks = [
   {
-    name: "Instant Delivery",
-    Icon: ArrowDownToLine,
+    name: "Fast Doorstep Delivery",
+    Icon: Package,
     description:
-      "Get your assets delivered to your email in seconds and download them right away.",
+      "Receive your assets delivered straight to your doorstep quickly and efficiently, just like with Amazon.",
+    category: "Delivery",
   },
   {
     name: "Guaranteed Quality",
     Icon: CheckCircle,
     description:
-      "Every asset on our platform is verified by our team to ensure our highest quality standards. Not happy? We offer a 30-day refund guarantee.",
+      "All assets are thoroughly vetted for top quality. If you're not satisfied, we offer a 30-day refund guarantee.",
+    category: "Quality",
   },
   {
-    name: "For the Planet",
+    name: "Eco-Friendly Commitment",
     Icon: Leaf,
     description:
-      "We've pledged 1% of sales to the preservation and restoration of the natural environment.",
+      "We dedicate 1% of our sales to the preservation and restoration of the environment.",
+    category: "Sustainability",
   },
 ];
 
@@ -45,7 +49,7 @@ export default function Home() {
             <Link href="/products" className={buttonVariants()}>
               Browse Trending
             </Link>
-            <Button variant="ghost">Our quality promise &rarr;</Button>
+            <Button variant="ghost" className="bg-neutral-100">Our quality promise &rarr;</Button>
           </div>
         </div>
 
@@ -65,7 +69,7 @@ export default function Home() {
                 className="text-center md:flex md:items-start md:text-left lg:block lg:text-center"
               >
                 <div className="md:flex-shrink-0 flex justify-center">
-                  <div className="h-16 w-16 flex items-center justify-center rounded-full bg-blue-100 text-blue-900">
+                  <div className="h-16 w-16 flex-center rounded-full bg-blue-100 text-blue-900">
                     {<perk.Icon className="w-1/3 h-1/3" />}
                   </div>
                 </div>
